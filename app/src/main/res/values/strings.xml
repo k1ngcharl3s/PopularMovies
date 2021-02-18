@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">Popular Movies</string>
+    <string name="content_authority">com.example.popularmovies</string>
+    <string name="most_popular">Most Popular</string>
+    <string name="favorites">Favorites</string>
+    <string name="top_rated">Top Rated</string>
+    <string name="popular_sort">Popular</string>
+    <string name="top_rated_sort">top_rated</string>
+    <string name="favorites_sort">favorites</string>
+    <string name="no_favorites">No saved favorites available.</string>
+    <string name="mark_favorite">Mark As Favorite</string>
+    <string name="share_trailer">Share Trailer</string>
+    <string name="default_description">Movie Poster</string>
+    <string name="poster_url">Poster URL</string>
+    <string name="title">Title</string>
+    <string name="description">Description</string>
+    <string name="rating">Rating</string>
+    <string name="release_date">Release Date</string>
+    <string name="out_of_ten">%1$.1f/10</string>
+    <string name="movie_id">Movie ID</string>
+    <string name="trailers">Trailers</string>
+    <string name="no_trailers">No trailers available</string>
+    <string name="reviews">Reviews</string>
+    <string name="no_reviews">No reviews available</string>
+    <string name="next_review">Next</string>
+</resources>

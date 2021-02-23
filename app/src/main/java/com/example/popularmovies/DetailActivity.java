@@ -51,7 +51,7 @@ public class DetailActivity extends AppCompatActivity {
 
     /* URL components for recovering the poster images */
     private final String POSTER_BASE_URL = "http://image.tmdb.org/t/p/";
-    private final String POSTER_SIZE = "w185/";
+    private final String POSTER_SIZE = "w155/";
 
     private final String TRAILER_BASE_URL = "http://youtube.com/watch?v=";
     private final String PARAM_RESULTS = "results";
@@ -104,7 +104,6 @@ public class DetailActivity extends AppCompatActivity {
 
         populateUI();
         new FetchTrailersTask().execute();
-        new FetchReviewsTask().execute();
     }
 
     @Override
@@ -197,16 +196,16 @@ public class DetailActivity extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(String result) {
-            extractTrailerData(resullt);
+            extractTrailerData(result);
             loadTrailerUI();
+
         }
     }
-
     public class FetchReviewsTask extends AsyncTask<String, Void, String> {
         @Override
-        protected String doInBackground(String... strings) {
+       protected String doInBackground(String... strings) {
             try {
-                URL reviewsRequestUrl = NetworkUtils.buildReviewsUrl(mId);
+                URL reviewsRequestUrl = NetworkUtils.buildTrailersUrl(mId);
                 return NetworkUtils.getResponseFromHttpUrl(reviewsRequestUrl);
             } catch (Exception e) {
                 e.printStackTrace();
@@ -216,7 +215,7 @@ public class DetailActivity extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(String result) {
-            extractReviews(result);
+           extractReviews(result);
             loadReviewUI();
         }
     }

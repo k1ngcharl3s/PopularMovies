@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
 
     /* URL components for retrieving poster images */
     private final String POSTER_BASE_URL =  "http://image.tmdb.org/t/p/";
-    private final String POSTER_SIZE = "w185/";
+    private final String POSTER_SIZE = "w155/";
 
     /* Storage for parsed JSON data */
     private String[] mPosterPaths;

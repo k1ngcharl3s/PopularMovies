@@ -17,20 +17,22 @@ public class NetworkUtils {
     private static final String MOVIE = "movie";
     private static final String VIDEOS = "videos";
     private static final String REVIEWS = "reviews";
+    public static final String API_KEY = "";
     private static final String API_KEY_PARAM = "api_key";
+
 
     public static URL buildMovieUrl(String sortType) {
         Uri uri = Uri.parse(MOVIE_BASE_URL).buildUpon()
                 .appendEncodedPath(API_VERSION)
                 .appendPath(MOVIE)
                 .appendPath(sortType)
-                .appendQueryParameter(API_KEY_PARAM, BuildConfig.THE_MOVIE_DB_API_KEY)
+                .appendQueryParameter(API_KEY_PARAM, API_KEY)
                 .build();
         URL url = null;
         try {
             url = new URL(uri.toString());
         } catch (MalformedURLException e) {
-            e.printStackTrace();;
+            e.printStackTrace();
         }
         return url;
     }
@@ -41,7 +43,24 @@ public class NetworkUtils {
                 .appendPath(MOVIE)
                 .appendPath(id)
                 .appendPath(VIDEOS)
-                .appendQueryParameter(API_KEY_PARAM, BuildConfig.THE_MOVIE_DB_API_KEY)
+                .appendQueryParameter(API_KEY_PARAM, API_KEY)
+                .build();
+        URL url = null;
+        try {
+            url = new URL(uri.toString());
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
+        return url;
+    }
+
+    public static URL buildReviewsUrl(String id) {
+        Uri uri = Uri.parse(MOVIE_BASE_URL).buildUpon()
+                .appendPath(API_VERSION)
+                .appendPath(MOVIE)
+                .appendPath(id)
+                .appendPath(REVIEWS)
+                .appendQueryParameter(API_KEY_PARAM, API_KEY)
                 .build();
         URL url = null;
         try {
